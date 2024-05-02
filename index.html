@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>NoShop</title>
+    <link rel="icon" type="image/png" href="./assents/noclaf-logo-1.svg" />
+</head>
+<body>
+    <div id="all">
+
+        <div id="up">
+            <img class="poster" src="./assents/poster.jpeg" alt="">
+
+            <h1 class="title"> Noclaf shopping </h1>
+
+
+            <div class="card-search">
+                <input type="text" name="name" id="inputSearch" title="Search" placeholder="Search">
+                
+                <div class="icons_popup" id="popup" onclick="openPopup()">
+                    <img id="shopCart" src="./assents/carrinho.svg" alt="">
+                </div>
+
+                <img id="magnifyingGlass" src="./assents/pesquisa.svg" alt="" onclick="searchBtn()">
+            </div>
+        </div>
+
+        <div id="products"></div>
+        <div id="screenCard"></div>
+    </div>
+
+    <div id="modal-card"> 
+        <section>
+            <header>
+                <h1 class="cart">Carrinho</h1>
+                <img id="backButton" src="./assents/voltar.svg" alt="" onclick="closePopup()">
+            </header>
+
+            <h5> Total: <span id="total-prod"></span> </h5>
+
+            <ol id="itens"></ol>
+
+            <input class="buttonBuy" type="button" value="Confirmar compra" onclick="buttonBuy()">
+            <input class="deleteBtn" type="button" value="Cancelar compra" onclick="deleteButton()">
+        </section>
+    </div>
+</body>
+</html>
