@@ -121,8 +121,7 @@ body::-webkit-scrollbar {
 
 .descriptionBtn{
     position: absolute;
-    width: 20px;
-    height: 20px;
+    height: 30px;
     top: 10px;
     right: 10px;
     z-index: 5;
@@ -226,7 +225,6 @@ header{
     color: #FFD30A;
     height: 30px;
     width: 100%;
-    margin-top: 10px;
     font-family: 'Ubuntu';
 }
 
@@ -258,4 +256,18 @@ header{
     justify-content: flex-end;
     height: 30px;
     margin-left: 10px;
+}
+
+li.nameItem::marker{
+    font-size: 25px;
+    font-family: 'ubuntu'
+}
+
+.buyPage{
+    background-color: #3C4045;
+    height: 150px;
+}
+
+.formOfPayment{
+    height: 10px;
 }

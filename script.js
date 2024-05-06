@@ -15,6 +15,7 @@ itemsInCart.setAttribute('id', 'items-in-cart')
 
 let is_home = false;
 let array_cart = [];
+let quanty = 0
 
 let array_products = [
     {id: 1, name: 'Oferta do dia', title: 'Rtx 4090', image: 'produto-1', type_img: 'jpg', qtd: 1, description: '', price: 18065, old_price: 12035.55,},
@@ -92,7 +93,7 @@ function transform(valor) {
 function create_tag_product(product, index) {
         return `
         <h3 class="titleH3">${product.name}</h3>
-        <img class="qtd: 1, descriptionBtn" onclick="descrption" src="./assents/Descrição-Do-Produto.svg" alt="">
+        <img class="qtd: 1, descriptionBtn" src="./assents/logo-dark_noclaf.png" alt="">
         <img class="pdr1 img_product" src="./assents/${product.image}.${product.type_img}" alt="">
         <h3 class="namePdr"> ${product.title} </h3>
         <h2 class="old-price"> ${transform(product.old_price)}</h2>
@@ -102,10 +103,6 @@ function create_tag_product(product, index) {
 
 createHome()
 
-function buttonBuy() {
-    alert("Obrigado pela compra, seu pedido será entregue em breve ;)")
-}
-
 function deleteButton() {
     localStorage.removeItem('array_products')
     let popup = document.getElementById('modal-card')
@@ -113,12 +110,13 @@ function deleteButton() {
 
     itemsInCart.remove()
     array_cart = []
+    quanty = 0
 }
 
 function calculationInCart() {
     let calculation = 0 
     array_cart.forEach((product) => {
-        calculation += product.old_price
+        calculation += product.old_price * product.qtd
     })
     popupValue.textContent = transform(calculation)
 }
@@ -129,27 +127,22 @@ function buyProduct(index) {
 
     if(prod_res > -1){
         array_cart[prod_res].qtd += 1;
+        quanty += 1;
     }
     else{
         array_cart.push(array_products[index]);
-        localStorage.setItem('array_products', JSON.stringify(array_cart));
-
-        const itemsInCartLocalStorage =  JSON.parse(localStorage.getItem('array_products'));
-
-       
-        itemsInCart.textContent = itemsInCartLocalStorage.length || 0
-        popup.appendChild(itemsInCart)
-
-        console.log(array_products[index]);
+        quanty += 1;
     }
+    
+    itemsInCart.textContent = quanty || 0
+    popup.appendChild(itemsInCart)
+    localStorage.setItem('array_products', JSON.stringify(array_cart));
 }
 
 function buttonCart() {
     let string_storage = localStorage.getItem('array_products');
     array_cart = JSON.parse(string_storage);
     console.log(array_cart);
-
-    newPopup()
 }
 
 function createHome() {
@@ -168,18 +161,15 @@ function createHome() {
     });
 }
 
-function deleteProduct() {
-    
-}
-
 function createProducts() {
     let tag_li_str = ''
+    console.log(array_cart);
     array_cart.forEach((product, index) => {
         tag_li_str += `<li class="nameItem">
             <div class='row'> 
                 <h2>${product.title}, </h2>
-                <h3 class="priceOfProduct">R$ ${product.old_price}, </h3>
-                <h4 class="productQuantity">Você possui ${product.qtd} desse produto</h4>
+                <h3 class="priceOfProduct"> R$ ${product.old_price},</h3>
+                <h4 class="productQuantity"> Você possui ${product.qtd} desse produto</h4>
                 <img class="deleteItem" src="./assents/X.svg" alt="" onclick="deleteProduct(${index})">
             </div>
         </li>`
@@ -187,3 +177,15 @@ function createProducts() {
 
     return tag_li_str
 }
+
+function deleteProduct(index) {
+    array_cart.splice(index, 1)
+    localStorage.setItem('array_products', JSON.stringify(array_cart))
+
+    openPopup()
+
+    const itemsInCartLocalStorage = JSON.parse(localStorage.getItem('array_products'));
+    itemsInCart.textContent = itemsInCartLocalStorage.length || 0;
+}
+
+// calculationInCart(); // Atualiza o cálculo do total no carrinho
