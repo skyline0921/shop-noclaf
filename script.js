@@ -31,8 +31,12 @@ let array_products = [
     {id: 10, name: 'Oferta', title: 'LG OLED CX (55 pol)', image: 'tv-img', type_img: 'webp', qtd: 1, description: '', price: 7999.14, old_price: 5672.31}
 ]
 
-function searchBtn() {
-    alert("Desculpe, não temos essa funcionalidade no momento :(")
+function searchBtn() {    
+    if(filteredProducts.length == 0){
+        return document.body.appendChild(emptyText())
+    }
+
+    return
 }
 
 function createPopup() {
@@ -188,4 +192,36 @@ function deleteProduct(index) {
     itemsInCart.textContent = itemsInCartLocalStorage.length || 0;
 }
 
-// calculationInCart(); // Atualiza o cálculo do total no carrinho
+magnifyingGlass.addEventListener('click', function() {
+    const searchText = inputSearch.value.toLowerCase();
+
+    products.innerHTML = "";
+
+    const filteredProducts = array_products.filter(product => {
+        const productTitle = product.title.toLowerCase();
+        return productTitle.includes(searchText);
+    })
+
+    let footer = document.getElementsByTagName('footer')[0];
+
+    let emptyCart = document.getElementById('empty-cart')
+
+    if (filteredProducts.length == 0) {
+        emptyCart.textContent = "Nenhum resultado encontrado. Verifique a ortografia ou use uma palavra ou frase diferente."
+        footer.style.bottom = "0"
+    }
+
+    else{
+        footer.style.bottom = "auto"
+        emptyCart.textContent = ""
+    }
+
+    filteredProducts.forEach((product, index) => {
+        const product_str = create_tag_product(product, index);
+        let divProduc = document.createElement("div");
+        divProduc.setAttribute("class", "content");
+        divProduc.setAttribute("id", `prod-${product.id}`);
+        divProduc.innerHTML = product_str;
+        products.appendChild(divProduc);
+    })
+})

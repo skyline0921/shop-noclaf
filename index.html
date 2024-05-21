@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,6 @@
     <link rel="icon" type="image/png" href="./assents/noclaf-logo-1.svg" />
 </head>
 <body>
-    <div id="all">
-
         <div id="up">
             <img class="poster" src="./assents/poster.jpeg" alt="">
 
@@ -30,7 +28,6 @@
 
         <div id="products"></div>
         <div id="screenCard"></div>
-    </div>
 
     <div id="modal-card"> 
         <section>
@@ -43,16 +40,18 @@
 
             <ol id="itens"></ol>
 
-            <input class="buttonBuy" type="button" value="Confirmar compra" onclick="buttonBuy()">
+            <a href="html2.html">
+                <input class="buttonBuy" type="button" value="Confirmar compra" onclick="buttonBuy()">
+            </a>
+            
             <input class="deleteBtn" type="button" value="Cancelar compra" onclick="deleteButton()">
         </section>
     </div>
 
+    <span id="empty-cart"></span>
+
     <footer>
-        <div class="">
-            <strong>Conheça-nos</strong>
-            
-        </div>
+        © Copyright 2024 - Bryan Rebello
     </footer>
 </body>
 </html>

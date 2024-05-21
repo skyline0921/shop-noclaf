@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu.zip');
+    src: url('/fonts/Ubuntu-Bold.ttf');
 }
 
 body{
@@ -150,6 +150,7 @@ body::-webkit-scrollbar {
     width: 100%;
     margin-top: 10px;
     font-family: 'Ubuntu';
+    cursor: pointer;
 }
 
 .content .img_product{
@@ -270,4 +271,42 @@ li.nameItem::marker{
 
 .formOfPayment{
     height: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu';
+    background-color: #3C4045;
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+.back{
+    height: 15px;
+}
+
+footer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Ubuntu';
+    background-color: #3C4045;
+    color: white;
+    height: 50px;
+    width: 100%;
+}
+
+#empty-cart{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }

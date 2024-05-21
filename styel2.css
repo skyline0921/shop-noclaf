@@ -1,0 +1,308 @@
+@font-face {
+    src: url('/fonts/Ubuntu-Bold.ttf');
+    font-family: 'Ubuntu';
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input{
+    padding: 5px;
+    height: 25px;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+    margin-right: 10px;
+}
+
+h4{
+    font-weight: 300;
+    font-family: 'Ubuntu';
+}
+
+.pass1{
+    border-radius: 50%;
+    width: 20px;
+    color: black;
+    background-color: rgba(238, 230, 230, 0.897);
+    text-align: center;
+}
+
+.next{
+    font-family: 'Ubuntu';
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    height: 20px;
+}
+
+.arrow{
+    position: relative;
+    height: 20px;
+    margin-left: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.identify{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 450px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.bt_next{
+    display: flex;
+    align-items: center;
+    width: 90px;
+    height: 30px;
+    padding: 5px;
+}
+
+.secTwo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 320px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    font-family: 'Ubuntu';
+}
+
+.pt2{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.pass2{
+    border-radius: 50%;
+    width: 20px;
+    color: black;
+    background-color: rgba(238, 230, 230, 0.897);
+    text-align: center;
+}
+
+.formPay{
+    height: 30px;
+    position: relative;
+}
+
+.firstForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.secondForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.thirdForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Ubuntu';
+}
+
+.pix{
+    margin-left: 50px;
+    height: 350px;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.codeQr{
+    height: 250px;
+}
+
+.leave{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    left: 150px;
+    width: 100px;
+}
+
+.leave span{
+    margin-right: 5px;
+}
+
+.x{
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contentAll{
+    height: 250px;
+    width: 360px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clean{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: -15px;
+    margin-top: -25px;
+    height: 50px;
+}
+
+.clean span{
+    margin-right: 5px;
+}
+
+.h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 25px;
+}
+
+.psw{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#password{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 30px;
+    height: 50px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.fieldsAll{
+    color: black;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    min-width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fieldsAll input{
+    padding: 5px;
+}
+
+.fields{
+    display: flex;
+}
+
+.finalyBuyBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.padlock{
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 5px;
+}
